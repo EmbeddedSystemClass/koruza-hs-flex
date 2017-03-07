@@ -1,0 +1,521 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD16\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">03/07/2017</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">4:40:47 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc" class="file"><acronym title="C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc">C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">59</td></tr>
+</table>
+</td>
+</table><a name="IDCDG21RM1QMTHJCULCWVAMYY1T1DUL5MI5M0FOIXKUBHFRDZOS4G"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDCOTTA1PCRXM4ILWIZ3RDO4IK5BPHSLAGF3GO5GPWYBLXVOMGCXKE">Clearance Constraint (Gap=6.5mil) (InNamedPolygon('')),(not InNet('GND'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID4V3PHUEFL1XQFQC3NQWESTMPYOJYPGPB0QJOLEL2QZ0F3Q33OZTM">Clearance Constraint (Gap=6.5mil) ((InDifferentialPairClass('All Differential Pairs')) and not (InPadClass('All Pads'))),(InNet('GND'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDWDQ52E1DIRIWODWCHKMAOFP54B4FVWXEEF3G0ONSSCAFZZ1A11ZD">Clearance Constraint (Gap=4mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDHHFNK2ZEYEYZKBBGKME1MS40EOQS4EKNZOG5NNL1PZHEZYUYPJLC">Width Constraint (Min=10mil) (Max=40mil) (Preferred=10mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID1PFW4AA3XZGFLGNG20TO5OC0MT4W31BMS210NMVRWL3K1IYXCWE">Power Plane Connect Rule(Relief Connect )(Expansion=20mil) (Conductor Width=10mil) (Air Gap=10mil) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDH5ZRN4O52QEQGZUPFGHBKRPAPJEWZPYAHGAXKBGKL31GMEQW43YN">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDJKI0GRRC0055KL3UE5O4U0CGBLIFX5VFYQMY44C3I3X21YY5THIE">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDV51IZ2BZQO2QDD3GPSY44VCQUMM0QCOSV155V5H5JIP5Y3WUNCHN">Hole Size Constraint (Min=1mil) (Max=200mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDA0CFUASDEVCRGGYLKFCSCQS0QCE5K2XC2NVPYDWKHPBPLFUT4YI">Height Constraint (Min=0mil) (Max=1000mil) (Prefered=500mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDRNAK0WNXYGNNJDTQZVIZ5KS23EJGUFTJJ0WPRSC5TU02TB0LEL4I">Hole To Hole Clearance (Gap=10mil) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDCNC4WM3Z4DFIMPPXQVCJ4B1Z4G2H0GA1PM3LCDPFBHDVFQEX5B0F">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</a></td>
+<td class="column2">36</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDNSG2HVYF2IZGGRS2SK5F2J1ZHEXSNB5VEBJQTUIRCRDTHM3ZL0I">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</a></td>
+<td class="column2">22</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDWCKOZMIN2AFQYHY5KSD455SRIO0PG2FIVB2OBE1SBTGPZU5YVWN">Silk to Silk (Clearance=10mil) (All),(All)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1DX01YI0PPUICRSUA0GUVBUBLCW25R5ZHSPMVPMEKASN3NDMKC">Net Antennae (Tolerance=0mil) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDBTJDV2OXG1IKJNJADAY3O54L2O10KADDODS5K1JUNB2F5LNIKIZH">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">59</td>
+</tr>
+</table><br><a name="IDCNC4WM3Z4DFIMPPXQVCJ4B1Z4G2H0GA1PM3LCDPFBHDVFQEX5B0F"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Minimum Solder Mask Sliver (Gap=10mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8702.544mil|Location2.X=8713.794mil|Location1.Y=3281.91mil|Location2.Y=3293.16mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8702.544mil|Location2.X=8713.794mil|Location1.Y=3281.91mil|Location2.Y=3293.16mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON2-12(1197.342mil,-5830.709mil) on Top Layer And Pad CON2-11(1165.846mil,-5830.709mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8734.04mil|Location2.X=8745.29mil|Location1.Y=3281.91mil|Location2.Y=3293.16mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8734.04mil|Location2.X=8745.29mil|Location1.Y=3281.91mil|Location2.Y=3293.16mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON2-13(1228.838mil,-5830.709mil) on Top Layer And Pad CON2-12(1197.342mil,-5830.709mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8765.536mil|Location2.X=8776.786mil|Location1.Y=3281.91mil|Location2.Y=3293.16mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8765.536mil|Location2.X=8776.786mil|Location1.Y=3281.91mil|Location2.Y=3293.16mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON2-14(1260.334mil,-5830.709mil) on Top Layer And Pad CON2-13(1228.838mil,-5830.709mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8797.032mil|Location2.X=8808.282mil|Location1.Y=3281.91mil|Location2.Y=3293.16mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8797.032mil|Location2.X=8808.282mil|Location1.Y=3281.91mil|Location2.Y=3293.16mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON2-15(1291.83mil,-5830.709mil) on Top Layer And Pad CON2-14(1260.334mil,-5830.709mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8828.528mil|Location2.X=8839.778mil|Location1.Y=3281.91mil|Location2.Y=3293.16mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8828.528mil|Location2.X=8839.778mil|Location1.Y=3281.91mil|Location2.Y=3293.16mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON2-16(1323.326mil,-5830.709mil) on Top Layer And Pad CON2-15(1291.83mil,-5830.709mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8860.024mil|Location2.X=8871.274mil|Location1.Y=3281.91mil|Location2.Y=3293.16mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8860.024mil|Location2.X=8871.274mil|Location1.Y=3281.91mil|Location2.Y=3293.16mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON2-17(1354.822mil,-5830.709mil) on Top Layer And Pad CON2-16(1323.326mil,-5830.709mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8891.52mil|Location2.X=8902.77mil|Location1.Y=3281.91mil|Location2.Y=3293.16mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8891.52mil|Location2.X=8902.77mil|Location1.Y=3281.91mil|Location2.Y=3293.16mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON2-18(1386.318mil,-5830.709mil) on Top Layer And Pad CON2-17(1354.822mil,-5830.709mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8923.016mil|Location2.X=8934.266mil|Location1.Y=3281.91mil|Location2.Y=3293.16mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8923.016mil|Location2.X=8934.266mil|Location1.Y=3281.91mil|Location2.Y=3293.16mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON2-19(1417.814mil,-5830.709mil) on Top Layer And Pad CON2-18(1386.318mil,-5830.709mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8954.512mil|Location2.X=8965.762mil|Location1.Y=3281.91mil|Location2.Y=3293.16mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8954.512mil|Location2.X=8965.762mil|Location1.Y=3281.91mil|Location2.Y=3293.16mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON2-20(1449.31mil,-5830.709mil) on Top Layer And Pad CON2-19(1417.814mil,-5830.709mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8938.764mil|Location2.X=8950.014mil|Location1.Y=3604.744mil|Location2.Y=3615.994mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8938.764mil|Location2.X=8950.014mil|Location1.Y=3604.744mil|Location2.Y=3615.994mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON2-2(1402.066mil,-5507.874mil) on Top Layer And Pad CON2-1(1433.562mil,-5507.874mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8907.268mil|Location2.X=8918.518mil|Location1.Y=3604.744mil|Location2.Y=3615.994mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8907.268mil|Location2.X=8918.518mil|Location1.Y=3604.744mil|Location2.Y=3615.994mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON2-3(1370.57mil,-5507.874mil) on Top Layer And Pad CON2-2(1402.066mil,-5507.874mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8875.772mil|Location2.X=8887.022mil|Location1.Y=3604.744mil|Location2.Y=3615.994mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8875.772mil|Location2.X=8887.022mil|Location1.Y=3604.744mil|Location2.Y=3615.994mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON2-4(1339.074mil,-5507.874mil) on Top Layer And Pad CON2-3(1370.57mil,-5507.874mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8844.276mil|Location2.X=8855.526mil|Location1.Y=3604.744mil|Location2.Y=3615.994mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8844.276mil|Location2.X=8855.526mil|Location1.Y=3604.744mil|Location2.Y=3615.994mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON2-5(1307.578mil,-5507.874mil) on Top Layer And Pad CON2-4(1339.074mil,-5507.874mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8812.78mil|Location2.X=8824.03mil|Location1.Y=3604.744mil|Location2.Y=3615.994mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8812.78mil|Location2.X=8824.03mil|Location1.Y=3604.744mil|Location2.Y=3615.994mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON2-6(1276.082mil,-5507.874mil) on Top Layer And Pad CON2-5(1307.578mil,-5507.874mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8781.284mil|Location2.X=8792.534mil|Location1.Y=3604.744mil|Location2.Y=3615.994mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8781.284mil|Location2.X=8792.534mil|Location1.Y=3604.744mil|Location2.Y=3615.994mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON2-7(1244.586mil,-5507.874mil) on Top Layer And Pad CON2-6(1276.082mil,-5507.874mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8749.788mil|Location2.X=8761.038mil|Location1.Y=3604.744mil|Location2.Y=3615.994mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8749.788mil|Location2.X=8761.038mil|Location1.Y=3604.744mil|Location2.Y=3615.994mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON2-8(1213.09mil,-5507.874mil) on Top Layer And Pad CON2-7(1244.586mil,-5507.874mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8686.796mil|Location2.X=8698.046mil|Location1.Y=3604.744mil|Location2.Y=3615.994mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8686.796mil|Location2.X=8698.046mil|Location1.Y=3604.744mil|Location2.Y=3615.994mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON2-9(1181.594mil,-5507.874mil) on Top Layer And Pad CON2-10(1150.098mil,-5507.874mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8718.292mil|Location2.X=8729.542mil|Location1.Y=3604.744mil|Location2.Y=3615.994mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8718.292mil|Location2.X=8729.542mil|Location1.Y=3604.744mil|Location2.Y=3615.994mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON2-9(1181.594mil,-5507.874mil) on Top Layer And Pad CON2-8(1213.09mil,-5507.874mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7999.918mil|Location2.X=8011.168mil|Location1.Y=8567.816mil|Location2.Y=8579.066mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7999.918mil|Location2.X=8011.168mil|Location1.Y=8567.816mil|Location2.Y=8579.066mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON1-12(522.339mil,-603.921mil) on Top Layer And Pad CON1-11(522.339mil,-572.425mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7999.918mil|Location2.X=8011.168mil|Location1.Y=8536.319mil|Location2.Y=8547.569mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7999.918mil|Location2.X=8011.168mil|Location1.Y=8536.319mil|Location2.Y=8547.569mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON1-13(522.339mil,-635.417mil) on Top Layer And Pad CON1-12(522.339mil,-603.921mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7999.918mil|Location2.X=8011.168mil|Location1.Y=8504.824mil|Location2.Y=8516.074mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7999.918mil|Location2.X=8011.168mil|Location1.Y=8504.824mil|Location2.Y=8516.074mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON1-14(522.339mil,-666.913mil) on Top Layer And Pad CON1-13(522.339mil,-635.417mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7999.918mil|Location2.X=8011.168mil|Location1.Y=8473.327mil|Location2.Y=8484.577mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7999.918mil|Location2.X=8011.168mil|Location1.Y=8473.327mil|Location2.Y=8484.577mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON1-15(522.339mil,-698.409mil) on Top Layer And Pad CON1-14(522.339mil,-666.913mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7999.918mil|Location2.X=8011.168mil|Location1.Y=8441.832mil|Location2.Y=8453.082mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7999.918mil|Location2.X=8011.168mil|Location1.Y=8441.832mil|Location2.Y=8453.082mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON1-16(522.339mil,-729.905mil) on Top Layer And Pad CON1-15(522.339mil,-698.409mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7999.918mil|Location2.X=8011.168mil|Location1.Y=8410.335mil|Location2.Y=8421.585mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7999.918mil|Location2.X=8011.168mil|Location1.Y=8410.335mil|Location2.Y=8421.585mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON1-17(522.339mil,-761.401mil) on Top Layer And Pad CON1-16(522.339mil,-729.905mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7999.918mil|Location2.X=8011.168mil|Location1.Y=8378.84mil|Location2.Y=8390.09mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7999.918mil|Location2.X=8011.168mil|Location1.Y=8378.84mil|Location2.Y=8390.09mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON1-18(522.339mil,-792.897mil) on Top Layer And Pad CON1-17(522.339mil,-761.401mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7999.918mil|Location2.X=8011.168mil|Location1.Y=8315.847mil|Location2.Y=8327.097mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7999.918mil|Location2.X=8011.168mil|Location1.Y=8315.847mil|Location2.Y=8327.097mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON1-19(522.339mil,-824.393mil) on Top Layer And Pad CON1-20(522.339mil,-855.889mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8322.753mil|Location2.X=8334.003mil|Location1.Y=8331.595mil|Location2.Y=8342.845mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8322.753mil|Location2.X=8334.003mil|Location1.Y=8331.595mil|Location2.Y=8342.845mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON1-2(845.173mil,-808.645mil) on Top Layer And Pad CON1-1(845.173mil,-840.141mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8322.753mil|Location2.X=8334.003mil|Location1.Y=8363.092mil|Location2.Y=8374.342mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8322.753mil|Location2.X=8334.003mil|Location1.Y=8363.092mil|Location2.Y=8374.342mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON1-3(845.173mil,-777.149mil) on Top Layer And Pad CON1-2(845.173mil,-808.645mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8322.753mil|Location2.X=8334.003mil|Location1.Y=8394.587mil|Location2.Y=8405.837mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8322.753mil|Location2.X=8334.003mil|Location1.Y=8394.587mil|Location2.Y=8405.837mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON1-4(845.173mil,-745.653mil) on Top Layer And Pad CON1-3(845.173mil,-777.149mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8322.753mil|Location2.X=8334.003mil|Location1.Y=8426.084mil|Location2.Y=8437.334mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8322.753mil|Location2.X=8334.003mil|Location1.Y=8426.084mil|Location2.Y=8437.334mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON1-5(845.173mil,-714.157mil) on Top Layer And Pad CON1-4(845.173mil,-745.653mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8322.753mil|Location2.X=8334.003mil|Location1.Y=8457.579mil|Location2.Y=8468.829mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8322.753mil|Location2.X=8334.003mil|Location1.Y=8457.579mil|Location2.Y=8468.829mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON1-6(845.173mil,-682.661mil) on Top Layer And Pad CON1-5(845.173mil,-714.157mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8322.753mil|Location2.X=8334.003mil|Location1.Y=8489.076mil|Location2.Y=8500.326mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8322.753mil|Location2.X=8334.003mil|Location1.Y=8489.076mil|Location2.Y=8500.326mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON1-7(845.173mil,-651.165mil) on Top Layer And Pad CON1-6(845.173mil,-682.661mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8322.753mil|Location2.X=8334.003mil|Location1.Y=8520.572mil|Location2.Y=8531.822mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8322.753mil|Location2.X=8334.003mil|Location1.Y=8520.572mil|Location2.Y=8531.822mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON1-8(845.173mil,-619.669mil) on Top Layer And Pad CON1-7(845.173mil,-651.165mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8322.753mil|Location2.X=8334.003mil|Location1.Y=8552.067mil|Location2.Y=8563.317mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8322.753mil|Location2.X=8334.003mil|Location1.Y=8552.067mil|Location2.Y=8563.317mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON1-9(845.173mil,-588.173mil) on Top Layer And Pad CON1-8(845.173mil,-619.669mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8322.753mil|Location2.X=8334.003mil|Location1.Y=8583.564mil|Location2.Y=8594.814mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8322.753mil|Location2.X=8334.003mil|Location1.Y=8583.564mil|Location2.Y=8594.814mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON1-10(845.173mil,-556.677mil) on Top Layer And Pad CON1-9(845.173mil,-588.173mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7999.918mil|Location2.X=8011.168mil|Location1.Y=8347.344mil|Location2.Y=8358.594mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7999.918mil|Location2.X=8011.168mil|Location1.Y=8347.344mil|Location2.Y=8358.594mil|Absolute=True">Minimum Solder Mask Sliver Constraint: (3.811mil &lt; 10mil) Between Pad CON1-19(522.339mil,-824.393mil) on Top Layer And Pad CON1-18(522.339mil,-792.897mil) on Top Layer [Top Solder] Mask Sliver [3.811mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDNSG2HVYF2IZGGRS2SK5F2J1ZHEXSNB5VEBJQTUIRCRDTHM3ZL0I"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=10mil) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8099.815mil|Location2.X=8111.065mil|Location1.Y=8126.524mil|Location2.Y=8137.774mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8099.815mil|Location2.X=8111.065mil|Location1.Y=8126.524mil|Location2.Y=8137.774mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.63mil &lt; 10mil) Between Track (386.236mil,-1036.78mil)(618.236mil,-1036.78mil) on Top Overlay And Pad CON1-21(618.236mil,-987.779mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [4.63mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8139.186mil|Location2.X=8150.436mil|Location1.Y=8126.524mil|Location2.Y=8137.774mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8139.186mil|Location2.X=8150.436mil|Location1.Y=8126.524mil|Location2.Y=8137.774mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.63mil &lt; 10mil) Between Track (618.236mil,-1036.78mil)(1397.638mil,-1036.78mil) on Top Overlay And Pad CON1-21(618.236mil,-987.779mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [4.63mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8000.815mil|Location2.X=8012.065mil|Location1.Y=8772.213mil|Location2.Y=8783.463mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8000.815mil|Location2.X=8012.065mil|Location1.Y=8772.213mil|Location2.Y=8783.463mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.268mil &lt; 10mil) Between Track (386.236mil,-375.141mil)(1397.638mil,-375.141mil) on Top Overlay And Pad CON1-21(519.236mil,-426.779mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [7.268mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8099.815mil|Location2.X=8111.065mil|Location1.Y=8772.213mil|Location2.Y=8783.463mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8099.815mil|Location2.X=8111.065mil|Location1.Y=8772.213mil|Location2.Y=8783.463mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.268mil &lt; 10mil) Between Track (386.236mil,-375.141mil)(1397.638mil,-375.141mil) on Top Overlay And Pad CON1-21(618.236mil,-426.779mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [7.268mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8295.816mil|Location2.X=8307.066mil|Location1.Y=8772.213mil|Location2.Y=8783.463mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8295.816mil|Location2.X=8307.066mil|Location1.Y=8772.213mil|Location2.Y=8783.463mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.268mil &lt; 10mil) Between Track (386.236mil,-375.141mil)(1397.638mil,-375.141mil) on Top Overlay And Pad CON1-21(814.236mil,-426.779mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [7.268mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8394.816mil|Location2.X=8406.066mil|Location1.Y=8772.213mil|Location2.Y=8783.463mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8394.816mil|Location2.X=8406.066mil|Location1.Y=8772.213mil|Location2.Y=8783.463mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.268mil &lt; 10mil) Between Track (386.236mil,-375.141mil)(1397.638mil,-375.141mil) on Top Overlay And Pad CON1-21(913.236mil,-426.779mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [7.268mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8788.816mil|Location2.X=8800.066mil|Location1.Y=8772.213mil|Location2.Y=8783.463mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8788.816mil|Location2.X=8800.066mil|Location1.Y=8772.213mil|Location2.Y=8783.463mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.268mil &lt; 10mil) Between Track (386.236mil,-375.141mil)(1397.638mil,-375.141mil) on Top Overlay And Pad CON1-21(1307.236mil,-426.779mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [7.268mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8480.816mil|Location2.X=8492.066mil|Location1.Y=8126.524mil|Location2.Y=8137.774mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8480.816mil|Location2.X=8492.066mil|Location1.Y=8126.524mil|Location2.Y=8137.774mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.63mil &lt; 10mil) Between Track (618.236mil,-1036.78mil)(1397.638mil,-1036.78mil) on Top Overlay And Pad CON1-21(999.236mil,-987.779mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [4.63mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8295.816mil|Location2.X=8307.066mil|Location1.Y=8126.524mil|Location2.Y=8137.774mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8295.816mil|Location2.X=8307.066mil|Location1.Y=8126.524mil|Location2.Y=8137.774mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.63mil &lt; 10mil) Between Track (618.236mil,-1036.78mil)(1397.638mil,-1036.78mil) on Top Overlay And Pad CON1-21(814.236mil,-987.779mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [4.63mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8591.816mil|Location2.X=8603.066mil|Location1.Y=8126.524mil|Location2.Y=8137.774mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8591.816mil|Location2.X=8603.066mil|Location1.Y=8126.524mil|Location2.Y=8137.774mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.63mil &lt; 10mil) Between Track (618.236mil,-1036.78mil)(1397.638mil,-1036.78mil) on Top Overlay And Pad CON1-21(1110.236mil,-987.779mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [4.63mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8197.816mil|Location2.X=8209.066mil|Location1.Y=8126.524mil|Location2.Y=8137.774mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8197.816mil|Location2.X=8209.066mil|Location1.Y=8126.524mil|Location2.Y=8137.774mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.63mil &lt; 10mil) Between Track (618.236mil,-1036.78mil)(1397.638mil,-1036.78mil) on Top Overlay And Pad CON1-21(716.236mil,-987.779mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [4.63mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8493.241mil|Location2.X=8504.491mil|Location1.Y=8772.213mil|Location2.Y=8783.463mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8493.241mil|Location2.X=8504.491mil|Location1.Y=8772.213mil|Location2.Y=8783.463mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.268mil &lt; 10mil) Between Track (386.236mil,-375.141mil)(1397.638mil,-375.141mil) on Top Overlay And Pad CON1-21(1011.661mil,-426.779mil) on Multi-Layer [Top Overlay] to [Top Solder] clearance [7.268mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8674.069mil|Location2.X=8685.319mil|Location1.Y=3367.122mil|Location2.Y=3378.372mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8674.069mil|Location2.X=8685.319mil|Location1.Y=3367.122mil|Location2.Y=3378.372mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.597mil &lt; 10mil) Between Track (1146.161mil,-5783.465mil)(1152.067mil,-5776.575mil) on Top Overlay And Pad CON2-11(1165.846mil,-5830.709mil) on Top Layer [Top Overlay] to [Top Solder] clearance [7.597mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8674.532mil|Location2.X=8685.782mil|Location1.Y=3364.65mil|Location2.Y=3375.9mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8674.532mil|Location2.X=8685.782mil|Location1.Y=3364.65mil|Location2.Y=3375.9mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.843mil &lt; 10mil) Between Track (1146.161mil,-5805.118mil)(1146.161mil,-5783.465mil) on Top Overlay And Pad CON2-11(1165.846mil,-5830.709mil) on Top Layer [Top Overlay] to [Top Solder] clearance [4.843mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8674.532mil|Location2.X=8685.782mil|Location1.Y=3350.87mil|Location2.Y=3362.12mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8674.532mil|Location2.X=8685.782mil|Location1.Y=3350.87mil|Location2.Y=3362.12mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.843mil &lt; 10mil) Between Track (1075.295mil,-5805.118mil)(1146.161mil,-5805.118mil) on Top Overlay And Pad CON2-11(1165.846mil,-5830.709mil) on Top Layer [Top Overlay] to [Top Solder] clearance [4.843mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8658.784mil|Location2.X=8670.034mil|Location1.Y=3608.744mil|Location2.Y=3619.994mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8658.784mil|Location2.X=8670.034mil|Location1.Y=3608.744mil|Location2.Y=3619.994mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.843mil &lt; 10mil) Between Track (1130.413mil,-5568.898mil)(1130.413mil,-5503.937mil) on Top Overlay And Pad CON2-10(1150.098mil,-5507.874mil) on Top Layer [Top Overlay] to [Top Solder] clearance [4.843mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8658.784mil|Location2.X=8670.034mil|Location1.Y=3652.052mil|Location2.Y=3663.302mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8658.784mil|Location2.X=8670.034mil|Location1.Y=3652.052mil|Location2.Y=3663.302mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.843mil &lt; 10mil) Between Track (1075.295mil,-5503.937mil)(1130.413mil,-5503.937mil) on Top Overlay And Pad CON2-10(1150.098mil,-5507.874mil) on Top Layer [Top Overlay] to [Top Solder] clearance [4.843mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8085.13mil|Location2.X=8096.38mil|Location1.Y=8596.29mil|Location2.Y=8607.54mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8085.13mil|Location2.X=8096.38mil|Location1.Y=8596.29mil|Location2.Y=8607.54mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (7.597mil &lt; 10mil) Between Track (569.583mil,-552.74mil)(576.472mil,-558.646mil) on Top Overlay And Pad CON1-11(522.339mil,-572.425mil) on Top Layer [Top Overlay] to [Top Solder] clearance [7.597mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8068.878mil|Location2.X=8080.128mil|Location1.Y=8595.827mil|Location2.Y=8607.077mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8068.878mil|Location2.X=8080.128mil|Location1.Y=8595.827mil|Location2.Y=8607.077mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.843mil &lt; 10mil) Between Track (547.929mil,-552.74mil)(547.929mil,-481.874mil) on Top Overlay And Pad CON1-11(522.339mil,-572.425mil) on Top Layer [Top Overlay] to [Top Solder] clearance [4.843mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8068.878mil|Location2.X=8080.128mil|Location1.Y=8595.827mil|Location2.Y=8607.077mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8068.878mil|Location2.X=8080.128mil|Location1.Y=8595.827mil|Location2.Y=8607.077mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.843mil &lt; 10mil) Between Track (547.929mil,-552.74mil)(569.583mil,-552.74mil) on Top Overlay And Pad CON1-11(522.339mil,-572.425mil) on Top Layer [Top Overlay] to [Top Solder] clearance [4.843mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8370.06mil|Location2.X=8381.31mil|Location1.Y=8611.575mil|Location2.Y=8622.825mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8370.06mil|Location2.X=8381.31mil|Location1.Y=8611.575mil|Location2.Y=8622.825mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.843mil &lt; 10mil) Between Track (849.11mil,-536.992mil)(849.11mil,-481.874mil) on Top Overlay And Pad CON1-10(845.173mil,-556.677mil) on Top Layer [Top Overlay] to [Top Solder] clearance [4.843mil]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8326.753mil|Location2.X=8338.003mil|Location1.Y=8611.575mil|Location2.Y=8622.825mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8326.753mil|Location2.X=8338.003mil|Location1.Y=8611.575mil|Location2.Y=8622.825mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (4.843mil &lt; 10mil) Between Track (784.15mil,-536.992mil)(849.11mil,-536.992mil) on Top Overlay And Pad CON1-10(845.173mil,-556.677mil) on Top Layer [Top Overlay] to [Top Solder] clearance [4.843mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDWCKOZMIN2AFQYHY5KSD455SRIO0PG2FIVB2OBE1SBTGPZU5YVWN"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=10mil) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7861.271mil|Location2.X=7872.521mil|Location1.Y=9049.831mil|Location2.Y=9061.081mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7861.271mil|Location2.X=7872.521mil|Location1.Y=9049.831mil|Location2.Y=9061.081mil|Absolute=True">Silk To Silk Clearance Constraint: (6.758mil &lt; 10mil) Between Text "10" (257.638mil,-114.488mil) on Top Overlay And Track (347.638mil,-244.488mil)(347.638mil,-44.488mil) on Top Overlay Silk Text to Silk Clearance [6.758mil]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

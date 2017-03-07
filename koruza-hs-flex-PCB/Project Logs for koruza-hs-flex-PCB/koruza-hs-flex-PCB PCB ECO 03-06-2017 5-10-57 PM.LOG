@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=TX_FAULT_1 Pin=P1-2
+Removed Pin From Net: NetName=TX_DISABLE_1 Pin=P1-3
+Removed Pin From Net: NetName=MOD_DEF_2_1 Pin=P1-4
+Removed Pin From Net: NetName=MOD_DEF_0_1 Pin=P1-6
+Removed Pin From Net: NetName=RATE_SEL_1 Pin=P1-7
+Removed Pin From Net: NetName=LOS_1 Pin=P1-8
+Added Pin To Net: NetName=LOS_1 Pin=P1-2
+Added Pin To Net: NetName=RATE_SEL_1 Pin=P1-3
+Added Pin To Net: NetName=MOD_DEF_0_1 Pin=P1-4
+Added Pin To Net: NetName=MOD_DEF_2_1 Pin=P1-6
+Added Pin To Net: NetName=TX_DISABLE_1 Pin=P1-7
+Added Pin To Net: NetName=TX_FAULT_1 Pin=P1-8

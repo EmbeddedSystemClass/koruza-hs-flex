@@ -1,0 +1,13 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [koruza-hs-flex-PCB.PcbDoc]
+   Generated File[koruza-hs-flex-PCB.TXT]
+   Generated File[koruza-hs-flex-PCB.DRL]
+   Generated File[koruza-hs-flex-PCB.LDP]
+   Generated File[koruza-hs-flex-PCB.DRR]
+
+
+Files Generated   : 4
+Documents Printed : 0
+
+Finished Output Generation At 12:12:49 PM On 03/08/2017

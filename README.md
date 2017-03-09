@@ -1,3 +1,4 @@
+![alt tag](https://github.com/IRNAS/koruza-hs-flex/blob/master/Pics/koruza-logo.png)
 # koruza-hs-flex
 
 Koruza-hs-flex PCB makes connection betwen two SFP modules. It connect their high speed signals directly, and brakeout all other signals like power, GPIO and I2C.

@@ -5,7 +5,10 @@ Koruza-hs-flex PCB makes connection betwen two SFP modules. It connect their hig
 
 The board makes connection with the [koruza-hs-rigid](https://github.com/IRNAS/koruza-hs-rigid) thrue the exposed true hole pads and additional moutning hole. 
 
-This board is in development and testing phase, for all information see the [schematic PDF](https://github.com/IRNAS/koruza-hs-flex/blob/master/koruza-hs-flex-PCB/Project%20Outputs%20for%20koruza-hs-flex-PCB/koruza-hs-flex.PDF) file.
+This board is in development and testing phase, for all information see the [schematic PDF](https://github.com/IRNAS/koruza-hs-flex/blob/master/koruza-hs-flex-PCB/Project%20Outputs%20for%20koruza-hs-flex-PCB/koruza-hs-flex.PDF) file.Produced board versions can be found in the [release section](https://github.com/IRNAS/koruza-hs-flex/releases) of the repository.
+
+**Latest release: [v0.2](https://github.com/IRNAS/koruza-hs-flex/releases/tag/v0.2)**
+
 
 All comments and suggestions can be added to the [Issues](https://github.com/IRNAS/koruza-hs-flex/issues) section of the repo. 
 

@@ -178,6 +178,94 @@ DocumentUniqueId=HBMUSPIV
 DocumentPath=Project Outputs for koruza-hs-flex-PCB\Design Rule Check - koruza-hs-flex-PCB.html
 DItemRevisionGUID=
 
+[GeneratedDocument2]
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\NC Drill\koruza-hs-flex-PCB.DRL
+DItemRevisionGUID=
+
+[GeneratedDocument3]
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\NC Drill\koruza-hs-flex-PCB.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument4]
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument5]
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument6]
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument7]
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GBP
+DItemRevisionGUID=
+
+[GeneratedDocument8]
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument9]
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GKO
+DItemRevisionGUID=
+
+[GeneratedDocument10]
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GM1
+DItemRevisionGUID=
+
+[GeneratedDocument11]
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GPB
+DItemRevisionGUID=
+
+[GeneratedDocument12]
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GPT
+DItemRevisionGUID=
+
+[GeneratedDocument13]
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument14]
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument15]
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument16]
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument17]
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\NC Drill\koruza-hs-flex-PCB.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument18]
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.REP
+DItemRevisionGUID=
+
+[GeneratedDocument19]
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument20]
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\NC Drill\koruza-hs-flex-PCB.TXT
+DItemRevisionGUID=
+
+[Parameter1]
+Name=Website
+Value=www.koruza.net
+
+[Parameter2]
+Name=Version
+Value=v0.3
+
+[Parameter3]
+Name=Company
+Value=Koruza
+
 [Configuration1]
 Name=Default Configuration
 ParameterCount=0

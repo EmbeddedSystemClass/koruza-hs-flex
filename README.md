@@ -12,6 +12,12 @@ This board is in development and testing phase, for all information see the [sch
 
 All comments and suggestions can be added to the [Issues](https://github.com/IRNAS/koruza-hs-flex/issues) section of the repo. 
 
+### Soldered prototype:
+
+![alt tag](https://github.com/IRNAS/koruza-hs-flex/blob/master/Pics/img20170327153319_32837895494_o.jpg)
+
+### 3D model in EDA software tool:
+
 ![alt tag](https://github.com/IRNAS/koruza-hs-flex/blob/master/Pics/3D_model.png)
 
 ---

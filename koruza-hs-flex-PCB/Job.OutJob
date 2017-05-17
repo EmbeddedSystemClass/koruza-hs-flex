@@ -21,7 +21,7 @@ TargetOutputMedium=Folder Structure
 VariantName=[No Variations]
 VariantScope=1
 CurrentConfigurationName=
-TargetPrinter=\\http://192.168.1.1:631\printserver
+TargetPrinter=Canon MB2000 series Printer WS
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
 OutputMedium1=Print Job
 OutputMedium1_Type=Printer
@@ -167,10 +167,10 @@ OutputName7=Gerber Files
 OutputCategory7=Fabrication
 OutputDocumentPath7=koruza-hs-flex-PCB.PcbDoc
 OutputVariantName7=
-OutputEnabled7=1
+OutputEnabled7=0
 OutputEnabled7_OutputMedium1=0
 OutputEnabled7_OutputMedium2=0
-OutputEnabled7_OutputMedium3=1
+OutputEnabled7_OutputMedium3=0
 OutputEnabled7_OutputMedium4=0
 OutputDefault7=0
 Configuration7_Name1=OutputConfigurationParameter1
@@ -180,14 +180,40 @@ OutputName8=NC Drill Files
 OutputCategory8=Fabrication
 OutputDocumentPath8=koruza-hs-flex-PCB.PcbDoc
 OutputVariantName8=
-OutputEnabled8=1
+OutputEnabled8=0
 OutputEnabled8_OutputMedium1=0
 OutputEnabled8_OutputMedium2=0
-OutputEnabled8_OutputMedium3=2
+OutputEnabled8_OutputMedium3=0
 OutputEnabled8_OutputMedium4=0
 OutputDefault8=0
 Configuration8_Name1=OutputConfigurationParameter1
 Configuration8_Item1=BoardEdgeRoutToolDia=2000000|GenerateBoardEdgeRout=False|GenerateDrilledSlotsG85=False|GenerateEIADrillFile=True|GenerateSeparatePlatedNonPlatedFiles=False|NumberOfDecimals=5|NumberOfUnits=2|OptimizeChangeLocationCommands=True|OriginPosition=Absolute|Record=DrillView|Units=Imperial|ZeroesMode=KeepLeadingAndTrailingZeroes
+OutputType9=BOM_PartType
+OutputName9=Bill of Materials
+OutputCategory9=Report
+OutputDocumentPath9=
+OutputVariantName9=
+OutputEnabled9=1
+OutputEnabled9_OutputMedium1=0
+OutputEnabled9_OutputMedium2=0
+OutputEnabled9_OutputMedium3=1
+OutputEnabled9_OutputMedium4=0
+OutputDefault9=0
+PageOptions9=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=0|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=Letter|PaperIndex=1
+Configuration9_Name1=ColumnNameFormat
+Configuration9_Item1=CaptionAsName
+Configuration9_Name2=Filter
+Configuration9_Item2=545046300E5446696C74657257726170706572000D46696C7465722E416374697665090F46696C7465722E43726974657269610A04000000000000000000
+Configuration9_Name3=General
+Configuration9_Item3=OpenExported=False|AddToProject=False|ForceFit=False|NotFitted=False|Database=False|DatabasePriority=False|IncludePCBData=False|IncludeVaultData=False|IncludeAlternatives=False|ShowExportOptions=True|TemplateFilename=..\..\..\Desktop\koruza_templates\BOM\BOM Purchase Live.xlsx|BatchMode=5|FormWidth=1383|FormHeight=956|SupplierProdQty=25|SupplierAutoQty=False|SupplierUseCachedPricing=False|SupplierCurrency=<none>
+Configuration9_Name4=GroupOrder
+Configuration9_Item4=LibRef=True
+Configuration9_Name5=OutputConfigurationParameter1
+Configuration9_Item5=??
+Configuration9_Name6=SortOrder
+Configuration9_Item6=Designator=Up|Comment=Up|Footprint=Up
+Configuration9_Name7=VisibleOrder
+Configuration9_Item7=Category=68|Description=68|Footprint=68|LibRef=68|Manufacturer 1=68|Manufacturer Part Number 1=68|Quantity=68|Supplier 1=68|Supplier Currency 1=68|Supplier Order Qty 1=68|Supplier Part Number 1=68|Supplier Stock 1=68|Supplier Subtotal 1=68|Supplier Unit Price 1=68
 
 [PublishSettings]
 OutputFilePath2=Project Outputs for Free Documents\Job1.PDF

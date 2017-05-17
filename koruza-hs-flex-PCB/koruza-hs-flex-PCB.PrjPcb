@@ -175,94 +175,102 @@ GenerateClassCluster=0
 DocumentUniqueId=HBMUSPIV
 
 [GeneratedDocument1]
-DocumentPath=Project Outputs for koruza-hs-flex-PCB\Design Rule Check - koruza-hs-flex-PCB.html
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\BOM\Bill of Materials-koruza-hs-flex-PCB.xlsx
 DItemRevisionGUID=
 
 [GeneratedDocument2]
-DocumentPath=Project Outputs for koruza-hs-flex-PCB\NC Drill\koruza-hs-flex-PCB.DRL
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Design Rule Check - koruza-hs-flex-PCB.html
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for koruza-hs-flex-PCB\NC Drill\koruza-hs-flex-PCB.DRR
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\NC Drill\koruza-hs-flex-PCB.DRL
 DItemRevisionGUID=
 
 [GeneratedDocument4]
-DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.EXTREP
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\NC Drill\koruza-hs-flex-PCB.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument5]
-DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GBL
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument6]
-DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GBO
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument7]
-DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GBP
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GBO
 DItemRevisionGUID=
 
 [GeneratedDocument8]
-DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GBS
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GBP
 DItemRevisionGUID=
 
 [GeneratedDocument9]
-DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GKO
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GBS
 DItemRevisionGUID=
 
 [GeneratedDocument10]
-DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GM1
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GKO
 DItemRevisionGUID=
 
 [GeneratedDocument11]
-DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GPB
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GM1
 DItemRevisionGUID=
 
 [GeneratedDocument12]
-DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GPT
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GPB
 DItemRevisionGUID=
 
 [GeneratedDocument13]
-DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GTL
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GPT
 DItemRevisionGUID=
 
 [GeneratedDocument14]
-DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GTO
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GTL
 DItemRevisionGUID=
 
 [GeneratedDocument15]
-DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GTP
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GTO
 DItemRevisionGUID=
 
 [GeneratedDocument16]
-DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GTS
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GTP
 DItemRevisionGUID=
 
 [GeneratedDocument17]
-DocumentPath=Project Outputs for koruza-hs-flex-PCB\NC Drill\koruza-hs-flex-PCB.LDP
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.GTS
 DItemRevisionGUID=
 
 [GeneratedDocument18]
-DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.REP
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\NC Drill\koruza-hs-flex-PCB.LDP
 DItemRevisionGUID=
 
 [GeneratedDocument19]
-DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.RUL
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.REP
 DItemRevisionGUID=
 
 [GeneratedDocument20]
+DocumentPath=Project Outputs for koruza-hs-flex-PCB\Gerber\koruza-hs-flex-PCB.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument21]
 DocumentPath=Project Outputs for koruza-hs-flex-PCB\NC Drill\koruza-hs-flex-PCB.TXT
 DItemRevisionGUID=
 
 [Parameter1]
+Name=ProjectTitle
+Value=Koruza high speed flex PCB
+
+[Parameter2]
 Name=Website
 Value=www.koruza.net
 
-[Parameter2]
+[Parameter3]
 Name=Version
 Value=v0.3
 
-[Parameter3]
+[Parameter4]
 Name=Company
 Value=Koruza
 

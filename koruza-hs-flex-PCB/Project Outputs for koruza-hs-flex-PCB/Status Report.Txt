@@ -1,13 +1,14 @@
-Output: NC Drill Files
-Type  : NC Drill
-From  : PCB Document [koruza-hs-flex-PCB.PcbDoc]
-   Generated File[koruza-hs-flex-PCB.TXT]
-   Generated File[koruza-hs-flex-PCB.DRL]
-   Generated File[koruza-hs-flex-PCB.LDP]
-   Generated File[koruza-hs-flex-PCB.DRR]
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 11:58:17 AM On 05/13/2017
+
+Output: Bill of Materials
+Type  : BOM
+From  : Variant [[No Variations]] of Project [koruza-hs-flex-PCB.PrjPcb]
+   Generated File[Bill of Materials-koruza-hs-flex-PCB.xlsx]
 
 
-Files Generated   : 4
+Files Generated   : 1
 Documents Printed : 0
 
-Finished Output Generation At 1:26:37 PM On 05/04/2017
+Finished Output Generation At 11:58:56 AM On 05/13/2017

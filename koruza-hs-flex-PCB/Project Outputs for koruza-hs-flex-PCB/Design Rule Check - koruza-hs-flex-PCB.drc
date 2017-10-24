@@ -1,7 +1,10 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc
-Date     : 05/04/2017
-Time     : 10:52:57 AM
+Date     : 10/24/2017
+Time     : 1:54:53 PM
+
+Processing Rule : Clearance Constraint (Gap=0.254mm) (InNamedPolygon('GND_B')),(All)
+Rule Violations :0
 
 Processing Rule : Clearance Constraint (Gap=0.254mm) (InNamedPolygon('GND_T')),(not InNet('GND'))
 Rule Violations :0

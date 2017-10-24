@@ -38,7 +38,7 @@ Generating : Bottom Layer
 
 
 Used DCodes :
-    D10
+    D11
     D14
     D15
     D16
@@ -104,7 +104,7 @@ Generating : Top Overlay
 
 
 Used DCodes :
-    D10
+    D11
     D25
     D26
     D27
@@ -218,10 +218,22 @@ Generating : Mechanical 1
 
 
 Used DCodes :
-    D10
+    D11
     D41
     D42
     D43
     D44
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 16
+      File : koruza-hs-flex-PCB.GM16
+
+    Adding Layer      : Mechanical 16
+
+
+Used DCodes :
+    D39
+    D41
 *************************************************************
 

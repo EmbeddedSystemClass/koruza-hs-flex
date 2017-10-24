@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------
-NCDrill File Report For: koruza-hs-flex-PCB.PcbDoc   10/24/2017  2:02:24 PM
+NCDrill File Report For: koruza-hs-flex-PCB.PcbDoc   10/24/2017  5:01:53 PM
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Layer Pair : Top Layer to Bottom Layer
@@ -8,8 +8,8 @@ EIA File   : koruza-hs-flex-PCB.DRL
 
 Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
 ----------------------------------------------------------------------------------------------------------------------------------
-T1      12mil (0.3mm)                                             Round             53        PTH        6.78inch (172.12mm)
-T2      15mil (0.381mm)                                           Round             663       PTH        29.63inch (752.68mm)
+T1      12mil (0.3mm)                                             Round             744       PTH        33.26inch (844.76mm)
+T2      15mil (0.381mm)                                           Round             8         PTH        6.06inch (153.90mm)
 T3      39mil (1mm)                                               Round             22        PTH        2.10inch (53.34mm)
 T4      41mil (1.05mm)                                            Round             13        PTH        2.37inch (60.14mm)
 T5      42mil (1.067mm)                                           Round             3         PTH        0.38inch (9.60mm)
@@ -17,6 +17,6 @@ T6      43mil (1.1mm)                                             Round         
 T7      61mil (1.55mm)                                            Round             4         PTH        5.60inch (142.22mm)
 T8      126mil (3.2mm)                                            Round             1         NPTH       0.00inch (0.00mm)
 ----------------------------------------------------------------------------------------------------------------------------------
-Totals                                                                              763
+Totals                                                                              799
 
-Total Processing Time (hh:mm:ss) : 00:00:00
+Total Processing Time (hh:mm:ss) : 00:00:01

@@ -1,6 +1,6 @@
 DRC Rules Export File for PCB: C:\Users\vojislav\Documents\koruza-hs-flex\koruza-hs-flex-PCB\koruza-hs-flex-PCB.PcbDoc
-RuleKind=Clearance|RuleName=Clearance_1|Scope=Board|Minimum=10.00
-RuleKind=Clearance|RuleName=Clearance_nets_poligon|Scope=Board|Minimum=10.00
+RuleKind=Clearance|RuleName=Clearance_1|Scope=Board|Minimum=10.04
+RuleKind=Clearance|RuleName=Clearance_nets_poligon|Scope=Board|Minimum=10.04
 RuleKind=Clearance|RuleName=Clearance_diff_gnd|Scope=Board|Minimum=6.50
 RuleKind=Clearance|RuleName=Clearance|Scope=Board|Minimum=4.00
 RuleKind=Width|RuleName=Width|Scope=Board|Minimum=10.00

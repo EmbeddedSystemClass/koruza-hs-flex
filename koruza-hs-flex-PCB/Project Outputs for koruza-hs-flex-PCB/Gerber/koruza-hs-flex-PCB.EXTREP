@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------------------
-Gerber File Extension Report For: koruza-hs-flex-PCB.GBR   10/24/2017  2:02:22 PM
+Gerber File Extension Report For: koruza-hs-flex-PCB.GBR   10/24/2017  5:01:52 PM
 ------------------------------------------------------------------------------------------
 
 
@@ -18,4 +18,5 @@ Layer Extension     Layer Description
 .GBO                Bottom Overlay                          
 .GKO                Keep-Out Layer                          
 .GM1                Mechanical 1                            
+.GM16               Mechanical 16                           
 ------------------------------------------------------------------------------------------
